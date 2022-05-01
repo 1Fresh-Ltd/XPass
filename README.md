@@ -1,5 +1,5 @@
 # TinyBIG
-Check your password for leaks at TinyBIG!
+Check your password for leaks/insecurity at TinyBIG!
 # How to use TinyBIG?
 1. Download the latest release of TinyBIG
 2. Open folder "TinyBIG"
