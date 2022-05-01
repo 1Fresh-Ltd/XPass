@@ -24,7 +24,7 @@ leakedpasswords = [
 checkfor = input("Check your password for leaks:")
 if checkfor in leakedpasswords: 
 	print('Your password contains at our leaked/insequred passwords base!')
-    print("Try to change your password for your own safety!")
-    print("or just do nothing...")
+        print("Try to change your password for your own safety!")
+        print("or just do nothing...")
 else:
 	print("Good news! Your password not contains in our base!")
