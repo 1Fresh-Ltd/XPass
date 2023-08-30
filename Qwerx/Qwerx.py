@@ -402,9 +402,12 @@ leakedpasswords = [
 'samsung',
 '123',
 'love123',
+"",
+" ",
+"   "
 ]
-checkfor = input("Check your password for leaks:")
+checkfor = input("Check your password for leaks: ")
 if checkfor in leakedpasswords: 
-        print('Your password contains at our leaked/insequred passwords base! Try to change it for your own safety! or just do nothing if ur lazy...')
+        print('Your password contains at our leaked/insequred passwords base/or it is invalid! Try to change it for your own safety! or just do nothing if ur lazy...')
 else:
 	print("Good news! Your password not contains in our base!")
