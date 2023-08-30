@@ -1,4 +1,4 @@
-print("Welcome to Qwerx 1.0.5")
+print("Welcome to Qwerx 1.0.6")
 leakedpasswords = [
 "123456",
 "123456789,"
