@@ -13,5 +13,6 @@ If you cant run Qwerx.py and it shows "Open with app", then follow this steps:
 3. Go by path C:\Users\YOUR USERNAME HERE\AppData\Local\Programs\Python\Python39\
 4. Select Python.exe
 5. Run Qwerx again
+#Email Us
 If that didnt help, email us:
 help-qwerx@inbox.ru
