@@ -1,10 +1,10 @@
-# TinyBIG
-Check your password for leaks/insecurity at TinyBIG!
-# How to use TinyBIG?
-1. Download the latest release of TinyBIG
-2. Open folder "TinyBIG"
-3. Open file in IDLE
-4. Click Run -> Run module
-5. Use it!
+# Qwerx
+Check your password for leaks/insecurity at Qwerx!
+# How to use Qwerx?
+1. Download the latest release of Qwerx
+2. Open folder "Qwerx"
+3. Download Python 3.9.9
+4. Double-click Qwerx.py
+6. Use it!
 # Note
-Our base is small at the moment(200 passwords), because TinyBIG is a new project! You can post leaked password that YOU know or think this password is not safe in the "issues" section.
+help-qwerx@inbox.ru
