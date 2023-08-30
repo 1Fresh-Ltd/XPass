@@ -404,7 +404,13 @@ leakedpasswords = [
 'love123',
 "",
 " ",
-"   "
+"   ",
+"qwertyuiopasdfghjklzxcvbnm1234567890",
+"ilovecarlsmom",
+"astrongpass",
+"astrongpassword",
+"mrbeast",
+"realpassword1"
 ]
 checkfor = input("Check your password for leaks: ")
 if checkfor in leakedpasswords: 
