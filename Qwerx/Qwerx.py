@@ -1,3 +1,4 @@
+import time
 print("Welcome to Qwerx 1.0.6")
 leakedpasswords = [
 "123456",
@@ -477,5 +478,7 @@ leakedpasswords = [
 checkfor = input("Check your password for leaks: ")
 if checkfor in leakedpasswords: 
         print('Your password contains at our leaked/insequred passwords base/or it is invalid! Try to change it for your own safety! or just do nothing if ur lazy...')
+        time.sleep( 5 )
 else:
 	print("Good news! Your password not contains in our base!")
+        time.sleep( 5 )
