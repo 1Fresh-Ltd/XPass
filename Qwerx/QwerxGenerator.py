@@ -1,7 +1,7 @@
 import secrets
 import string
 import time
-print("Qwerx v1.0.6")
+print("XPass v1.0.6")
 print("This is an experimental feature, may be bugs")
 time.sleep( 5 )
 letters = string.ascii_letters
