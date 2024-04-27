@@ -510,7 +510,7 @@ def generator():
     menu()
 
 def menu():
-    print("Welcome to XPass 1.1.2")
+    print("Welcome to XPass 1.2")
     gen = input('Select an option\n[1] - XPass\n[2] - XPass Generator\n[3] - Exit')
     if gen == '1':
         xpass()
