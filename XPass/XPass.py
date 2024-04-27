@@ -478,6 +478,13 @@ def xpass() :
         'beartrap',
         'p@ssword1234',
         'passw0rd1234',
+        'newpasswordlol',
+        'newpasslolword',
+        'newpasswordlord',
+        'iWriteCpp',
+        'qwertyz',
+        'qwertyz3465',
+        'bloxstrap'
     ]
     checkfor = input("Check your password for leaks: ")
     if checkfor in leakedpasswords:
