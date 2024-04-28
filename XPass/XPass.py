@@ -10307,14 +10307,13 @@ def xpass() :
 
 def generator():
     print("This is an experimental feature, may be bugs")
+    pwd_length = int(input('How many chars would you like to be in your password?\n'))
     time.sleep(2)
     letters = string.ascii_letters
     digits = string.digits
     special_chars = string.punctuation
 
     alphabet = letters + digits + special_chars
-
-    pwd_length = 8
 
     pwd = ''
     for i in range(pwd_length):
@@ -10324,15 +10323,26 @@ def generator():
     input("Press enter to proceed...")
     menu()
 
+#def keychain():
+#    savedpasses = ['']
+#    print('Your passwords' + savedpasses)
+#    chaininput = input('Choose an option:\n[1] - Add a new password\n[2] - Return to menu\n')
+#    if chaininput == '1':
+#        newpass = input('Enter a new password to save')
+#        savedpasses.append(newpass)
+# that code is not working tho =(
+
 def menu():
     print("Welcome to XPass 1.2")
-    gen = input('Select an option\n[1] - XPass\n[2] - XPass Generator\n[3] - Exit')
+    gen = input('Select an option\n[1] - XPass\n[2] - XPass Generator\n[3] - Exit\n')
     if gen == '1':
         xpass()
+    if gen == '2':
+        generator()
+    if gen == '3':
+        exit()
     else:
-        if gen == '2':
-            generator()
-        if gen == '3':
-            exit()
+        print('input is invalid')
+        menu()
 
 menu()
