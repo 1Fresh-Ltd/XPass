@@ -2,7 +2,7 @@ import time
 import secrets
 import string
 def xpass() :
-    leakedpasswords = [
+   leaked = [
         "123456",
         "123456789,"
         "picture1",
@@ -10295,7 +10295,7 @@ def xpass() :
         '#P18#12#',
     ]
     checkfor = input("Check your password for leaks: ")
-    if checkfor in leakedpasswords:
+    if checkfor in leaked:
         print('We found the ' + checkfor +
               ' in  our database, we recommend you to change it or generate new or the input was invalid ')
         time.sleep(5)
