@@ -1,8 +1,9 @@
 import time
 import secrets
 import string
+import re
 def xpass() :
-   leaked = [
+    leakedpasswords = [
         "123456",
         "123456789,"
         "picture1",
@@ -10295,18 +10296,31 @@ def xpass() :
         '#P18#12#',
     ]
     checkfor = input("Check your password for leaks: ")
-    if checkfor in leaked:
-        print('We found the ' + checkfor +
-              ' in  our database, we recommend you to change it or generate new or the input was invalid ')
+    if checkfor in leakedpasswords:
+        print('We found the ' + checkfor +' in  our database, we recommend you to change it or generate new or the input was invalid ')
         time.sleep(5)
     else:
-        print(checkfor + " was not found in our database")
+        check_pass = re.compile(r'''(
+                ^.*(?=.{10,})           
+                (?=.*d)                
+                (?=.*[a-z])             
+                (?=.*[A-Z])             
+                (?=.*[@#$%^&+=!]).*$    
+                )''', re.VERBOSE)
+
+        mo1 = check_pass.search(checkfor)
+
+        if mo1:
+            status = "strong"
+        else:
+            status = "weak"
+        print(checkfor + " was not found in our database, the password is " + status)
         time.sleep(5)
     input("Press enter to proceed...")
     menu()
 
 def generator():
-    print("This is an experimental feature, may be bugs")
+    print("XPass Generator " + version)
     pwd_length = int(input('How many chars would you like to be in your password?\n'))
     time.sleep(2)
     letters = string.ascii_letters
@@ -10333,16 +10347,21 @@ def generator():
 # that code is not working tho =(
 
 def menu():
-    print("Welcome to XPass")
+    print("Welcome to XPass " + version)
+    #gen = input('Select an option\n[1] - XPass\n[2] - XPass Generator\n[3] - XPass Keychain [4] - Exit\n')
     gen = input('Select an option\n[1] - XPass\n[2] - XPass Generator\n[3] - Exit\n')
     if gen == '1':
         xpass()
     if gen == '2':
         generator()
     if gen == '3':
+        #keychain()
         exit()
+    #if gen == '4':
+        #exit()
     else:
         print('input is invalid')
         menu()
 
+version = ("pre-1.3")
 menu()
