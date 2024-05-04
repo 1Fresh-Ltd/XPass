@@ -2,6 +2,8 @@ import time
 import secrets
 import string
 import re
+from colorama import Fore, Style
+
 def xpass() :
     leakedpasswords = [
         "123456",
@@ -10295,9 +10297,9 @@ def xpass() :
         '$$asma$%',
         '#P18#12#',
     ]
-    checkfor = input("Check your password for leaks: ")
+    checkfor = input(Fore.MAGENTA + "Check your password for leaks: " + Style.RESET_ALL)
     if checkfor in leakedpasswords:
-        print('We found the ' + checkfor +' in  our database, we recommend you to change it or generate new or the input was invalid ')
+        print(Fore.MAGENTA + 'We found the ' + checkfor +' in  our database, we recommend you to change it or generate new or the input was invalid' + Style.RESET_ALL)
         time.sleep(5)
     else:
         check_pass = re.compile(r'''(
@@ -10311,17 +10313,17 @@ def xpass() :
         mo1 = check_pass.search(checkfor)
 
         if mo1:
-            status = "strong"
+            status = (Fore.GREEN + "strong")
         else:
-            status = "weak"
-        print(checkfor + " was not found in our database, the password is " + status)
+            status = (Fore.RED + "weak")
+        print(Fore.MAGENTA + checkfor + " was not found in our database, the password is " + status + Style.RESET_ALL)
         time.sleep(5)
     input("Press enter to proceed...")
     menu()
 
 def generator():
-    print("XPass Generator " + version)
-    pwd_length = int(input('How many chars would you like to be in your password?\n'))
+    print(Fore.MAGENTA + "XPass Generator " + version + Style.RESET_ALL)
+    pwd_length = int(input(Fore.MAGENTA + 'How many chars would you like to be in your password?\n' + Style.RESET_ALL))
     time.sleep(2)
     letters = string.ascii_letters
     digits = string.digits
@@ -10333,7 +10335,7 @@ def generator():
     for i in range(pwd_length):
         pwd += ''.join(secrets.choice(alphabet))
 
-    print("Generated password is : " + pwd)
+    print(Fore.MAGENTA + "Generated password is : " + pwd + Style.RESET_ALL)
     input("Press enter to proceed...")
     menu()
 
@@ -10347,9 +10349,9 @@ def generator():
 # that code is not working tho =(
 
 def menu():
-    print("Welcome to XPass " + version)
-    #gen = input('Select an option\n[1] - XPass\n[2] - XPass Generator\n[3] - XPass Keychain [4] - Exit\n')
-    gen = input('Select an option\n[1] - XPass\n[2] - XPass Generator\n[3] - Exit\n')
+    print(Fore.MAGENTA + "Welcome to XPass " + version + note + Style.RESET_ALL)
+    #gen = input(Fore.MAGENTA + 'Select an option\n[1] - XPass\n[2] - XPass Generator\n[3] - XPass Keychain [4] - Exit\n' + Style.RESET_ALL)
+    gen = input(Fore.MAGENTA + 'Select an option\n[1] - XPass\n[2] - XPass Generator\n[3] - Exit\n' + Style.RESET_ALL)
     if gen == '1':
         xpass()
     if gen == '2':
@@ -10363,5 +10365,7 @@ def menu():
         print('input is invalid')
         menu()
 
-version = ("pre-1.3")
+version = ("pre-1.3 build #2")
+note = "Note : i broke the strong or weak thing =("
+
 menu()
