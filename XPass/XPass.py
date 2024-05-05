@@ -3,6 +3,7 @@ import secrets
 import string
 import re
 from colorama import Fore, Style
+import random
 
 def xpass() :
     leakedpasswords = [
@@ -10316,13 +10317,89 @@ def xpass() :
             status = (Fore.GREEN + "strong")
         else:
             status = (Fore.RED + "weak")
+
         print(Fore.MAGENTA + checkfor + " was not found in our database, the password is " + status + Style.RESET_ALL)
         time.sleep(5)
     input("Press enter to proceed...")
     menu()
 
 def generator():
+    animals = [
+        'cat',
+        'kitten',
+        'dog',
+        'puppy',
+        'horse',
+        'foal',
+        'cow',
+        'calf',
+        'sheep',
+        'lamb',
+        'pig',
+        'piglet',
+        'goat',
+        'kid',
+        'deer',
+        'fawn',
+        'bear',
+        'cub',
+        'wolf',
+        'cub',
+        'lion',
+        'cub',
+        'tiger',
+        'cub',
+        'elephant',
+        'calf',
+        'giraffe',
+        'calf ',
+        'whale',
+        'calf',
+        'chicken',
+        'chick',
+        'duck',
+        'duckling ',
+        'goose',
+        'gosling',
+        'swan',
+        'cygnet',
+        'dove',
+        'squab',
+        'sparrow',
+        'chick',
+        'owl',
+        'owlet',
+        'eagle',
+        'eaglet',
+        'stork',
+        'chick',
+        'butterfly',
+        'caterpillar',
+        'ant',
+        'larva',
+        'bee',
+        'larva ',
+        'beetle',
+        'larva',
+        'shark',
+        'pup',
+        'dolphin',
+        'calf',
+        'salmon',
+        'fry',
+        'turtle',
+        'hatchling',
+        'snake',
+        'snakelet ',
+        'crocodile',
+        'hatchling ',
+        'frog',
+        'tadpole',
+        'toad',
+        'tadpole'
+    ]
     print(Fore.MAGENTA + "XPass Generator " + version + Style.RESET_ALL)
+    #genver = input(Fore.MAGENTA + "Which type of generator would you like to use :\n[1] - Random characters(hard to remember, extreme hard to hack)\n[2] - Random words (easy to remember, hard to hack)\n" + Style.RESET_ALL)
     pwd_length = int(input(Fore.MAGENTA + 'How many chars would you like to be in your password?\n' + Style.RESET_ALL))
     time.sleep(2)
     letters = string.ascii_letters
@@ -10339,6 +10416,7 @@ def generator():
     input("Press enter to proceed...")
     menu()
 
+
 #def keychain():
 #    savedpasses = ['']
 #    print('Your passwords' + savedpasses)
@@ -10349,7 +10427,7 @@ def generator():
 # that code is not working tho =(
 
 def menu():
-    print(Fore.MAGENTA + "Welcome to XPass " + version + note + Style.RESET_ALL)
+    print(Fore.MAGENTA + "Welcome to XPass " + version + Style.RESET_ALL)
     #gen = input(Fore.MAGENTA + 'Select an option\n[1] - XPass\n[2] - XPass Generator\n[3] - XPass Keychain [4] - Exit\n' + Style.RESET_ALL)
     gen = input(Fore.MAGENTA + 'Select an option\n[1] - XPass\n[2] - XPass Generator\n[3] - Exit\n' + Style.RESET_ALL)
     if gen == '1':
@@ -10365,7 +10443,6 @@ def menu():
         print('input is invalid')
         menu()
 
-version = ("pre-1.3 build #2")
-note = "Note : i broke the strong or weak thing =("
+version = ("pre-1.3 build #3(a password type checker is a bit buggy =(")
 
 menu()
