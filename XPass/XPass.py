@@ -10298,9 +10298,9 @@ def xpass() :
         '$$asma$%',
         '#P18#12#',
     ]
-    checkfor = input(Fore.MAGENTA + "Check your password for leaks: " + Style.RESET_ALL)
+    checkfor = input(Fore.MAGENTA + "----------------------------------\nCheck your password for leaks: \n->" + Style.RESET_ALL)
     if checkfor in leakedpasswords:
-        print(Fore.MAGENTA + 'We found the ' + checkfor +' in  our database, we recommend you to change it or generate new or the input was invalid' + Style.RESET_ALL)
+        print(Fore.MAGENTA + 'We found the ' + checkfor +' in  our database, we recommend you to change it or generate new or the input was invalid\n------------------------------------------------------------------------------------------------------\n' + Style.RESET_ALL)
         time.sleep(5)
     else:
         check_pass = re.compile(r'''(
@@ -10318,9 +10318,9 @@ def xpass() :
         else:
             status = (Fore.RED + "weak")
 
-        print(Fore.MAGENTA + checkfor + " was not found in our database, the password is " + status + Style.RESET_ALL)
+        print(Fore.GREEN + checkfor + Fore.MAGENTA + " was not found in our database, the password is " + status + Fore.MAGENTA + "\n------------------------------------------------------------------------------------------------------" + Style.RESET_ALL)
         time.sleep(5)
-    input("Press enter to proceed...")
+    input("->")
     menu()
 
 def generator():
@@ -10398,7 +10398,7 @@ def generator():
         'toad',
         'tadpole'
     ]
-    print(Fore.MAGENTA + "XPass Generator " + version + Style.RESET_ALL)
+    print(Fore.MAGENTA + "_______________________________________________\nXPass Generator " + version + "\n_______________________________________________" + Style.RESET_ALL)
     #genver = input(Fore.MAGENTA + "Which type of generator would you like to use :\n[1] - Random characters(hard to remember, extreme hard to hack)\n[2] - Random words (easy to remember, hard to hack)\n" + Style.RESET_ALL)
     pwd_length = int(input(Fore.MAGENTA + 'How many chars would you like to be in your password?\n' + Style.RESET_ALL))
     time.sleep(2)
@@ -10412,7 +10412,7 @@ def generator():
     for i in range(pwd_length):
         pwd += ''.join(secrets.choice(alphabet))
 
-    print(Fore.MAGENTA + "Generated password is : " + pwd + Style.RESET_ALL)
+    print(Fore.LIGHTGREEN_EX + "Generated password is : " + pwd + Style.RESET_ALL)
     input("Press enter to proceed...")
     menu()
 
@@ -10427,9 +10427,11 @@ def generator():
 # that code is not working tho =(
 
 def menu():
-    print(Fore.MAGENTA + "Welcome to XPass " + version + Style.RESET_ALL)
+    asciitext = " _     _  _____  _______ _______ _______\n  \___/  |_____] |_____| |______ |______\n _/   \_ |       |     | ______| ______|"
+    print(Fore.MAGENTA + asciitext + Style.RESET_ALL)
+    print("version " + version)
     #gen = input(Fore.MAGENTA + 'Select an option\n[1] - XPass\n[2] - XPass Generator\n[3] - XPass Keychain [4] - Exit\n' + Style.RESET_ALL)
-    gen = input(Fore.MAGENTA + 'Select an option\n[1] - XPass\n[2] - XPass Generator\n[3] - Exit\n' + Style.RESET_ALL)
+    gen = input(Fore.MAGENTA + '_________________________\n|Select an option       |\n|[1] - XPass            |\n|[2] - XPass Generator  |\n|[3] - Exit             |\n|_______________________|\n->' + Style.RESET_ALL)
     if gen == '1':
         xpass()
     if gen == '2':
@@ -10443,6 +10445,6 @@ def menu():
         print('input is invalid')
         menu()
 
-version = ("pre-1.3 build #3(a password type checker is a bit buggy =(")
+version = ("XPass pre 1.3 build #4")
 
 menu()
