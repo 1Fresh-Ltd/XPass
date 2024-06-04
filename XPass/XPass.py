@@ -5,8 +5,20 @@ import re
 from colorama import Fore, Style
 import random
 import os
+import subprocess
+
+# that's still a work in progress (will be used to create random file names)
+def generate_random_name(length):
+    letters = string.ascii_lowercase
+    nnnnn = ''.join(random.choice(letters) for i in range(length))
+    return nnnnn
+
+  
+
+
 
 def xpass() :
+    # that thingy under that comment (leaked massive) soon will be recreated(without using massive)
     leakedpasswords = [
         "123456",
         "123456789,"
@@ -10326,7 +10338,7 @@ def xpass() :
     menu()
 
 def generator():
-    ## animals thing is a placeholder
+    # animals thing is a placeholder(i dont think i will really add that tbh)
     animals = [
         'cat',
         'kitten',
@@ -10421,17 +10433,19 @@ def generator():
 
 
 # currently onto this thingy under this line
+# note : add something like app password(when calling keychain() it will require a password that will be set by user when first opened)
 def keychain():
     print("Welcome to XPass keychain(WIP)")
     choice = input("Menu:\n[1] - Add a new password\n[2] - View your passwords\n[3] - Exit to the XPass")
     if choice == '1':
         password = input("Enter a password that you would like to add(Attach a website to the password(separate by :)): ")
-        with open('passwords.txt', 'a') as f:
-            f.write(f'{password}\n')
+        with open('vvvrqo.txt', 'a') as f:                                 # with open(f'{here goes variable for random file mame}.txt', 'a') as f:
+            f.write(f'{password}\n')                                       # that comment is for a random filename(next feature)
+            subprocess.check_call(["attrib","+H","vvvrqo.txt"])
         
         keychain()
     if choice == '2':
-        with open('passwords.txt', 'r') as f:
+        with open('vvvrqo.txt', 'r') as f:
             for line in f:
                 parts = line.strip().split(':')
                 username = parts[0]
@@ -10439,6 +10453,7 @@ def keychain():
                 print(f"Website(If you added): {username}, password: {passkey}")
                 input("Press any key to proceed")
                 keychain()
+                
 
 
 
@@ -10464,6 +10479,6 @@ def menu():
         print('input is invalid')
         menu()
 
-version = ("XPass 1.3")
+version = ("XPass 1.3") #currently 1.3 is a WIP thingy
 
 menu()
