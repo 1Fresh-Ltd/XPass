@@ -10433,12 +10433,11 @@ def generator():
 
 
 # currently onto this thingy under this line
-# note : add something like app password(when calling keychain() it will require a password that will be set by user when first opened)
 def keychain():
     print("Welcome to XPass keychain(WIP)")
     choice = input("Menu:\n[1] - Add a new password\n[2] - View your passwords\n[3] - Exit to the XPass")
     if choice == '1':
-        password = input("Enter a password that you would like to add(Attach a website to the password(separate by :)): ")
+        password = input("Enter a password that you would like to add(Attach a website to the password(separate by :)): ") # will be remade(bug if not adding the website code dies)
         with open('vvvrqo.txt', 'a') as f:                                 # with open(f'{here goes variable for random file mame}.txt', 'a') as f:
             f.write(f'{password}\n')                                       # that comment is for a random filename(next feature)
             subprocess.check_call(["attrib","+H","vvvrqo.txt"])
@@ -10455,6 +10454,20 @@ def keychain():
                 keychain()
                 
 
+def check():
+    if not os.path.exists('lielvv.txt'):
+        apppass = input("lielvv.txt not found\nEnter a password that will be needed every time you open the app(for security): ")
+        with open('lielvv.txt', 'w') as f:
+                f.write(f'{apppass}')
+        print("Operation completed.")
+
+    with open('lielvv.txt', 'r') as f:
+        apppass = f.read()
+        inputpass = input("Enter password to access the app: ")
+        if inputpass == apppass:
+            menu()
+        else:
+            exit('Access denied')
 
 
 
@@ -10462,23 +10475,20 @@ def menu():
     asciitext = " _     _  _____  _______ _______ _______\n  \___/  |_____] |_____| |______ |______\n _/   \_ |       |     | ______| ______|"
     print(Fore.MAGENTA + asciitext + Style.RESET_ALL)
     print(Fore.MAGENTA + "version " + version + Style.RESET_ALL)
-    #gen = input(Fore.MAGENTA + 'Select an option\n[1] - XPass\n[2] - XPass Generator\n[3] - XPass Keychain [4] - Exit\n' + Style.RESET_ALL)
-    gen = input(Fore.MAGENTA + '_________________________\n|Select an option       |\n|[1] - XPass            |\n|[2] - XPass Generator  |\n|[3] - Exit             |\n|_______________________|\n->' + Style.RESET_ALL)
+    gen = input(Fore.MAGENTA + '_________________________\n|                       |\n|Select an option       |\n|[1] - XPass            |\n|[2] - XPass Generator  |\n|[3] - XPass Keychain   |\n|[4] - Exit             |\n|_______________________|\n->' + Style.RESET_ALL)
     if gen == '1':
         xpass()
     if gen == '2':
         generator()
     if gen == '3':
-        #keychain()
-        exit()
-    #if gen == '4':
-        #exit()
-    if gen == 'vvv':
         keychain()
+    if gen == '4':
+        exit()
     else:
         print('input is invalid')
         menu()
 
-version = ("XPass 1.3") #currently 1.3 is a WIP thingy
+version = ("2.0") #why not 1.3? cuz thats a big update
 
+check()
 menu()
