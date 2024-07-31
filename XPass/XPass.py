@@ -19,7 +19,7 @@ def generate_random_name(length):
 
 def xpass() :
     # that thingy under that comment (leaked massive) soon will be recreated(without using massive) <- this shitty comment maybe lies =3 (btw im just lazy zz)
-    leakedpasswords = [
+    ourbreach = [
         "123456",
         "123456789,"
         "picture1",
@@ -11360,9 +11360,9 @@ def xpass() :
         'zzzzz',
         'zzzzzz'
     ]
-    checkfor = input(Fore.MAGENTA + "----------------------------------\nCheck your password for leaks: \n->" + Style.RESET_ALL)
-    if checkfor in leakedpasswords:
-        print(Fore.MAGENTA + 'We found the ' + checkfor +' in  our database, we recommend you to change it or generate new or the input was invalid\n------------------------------------------------------------------------------------------------------\n' + Style.RESET_ALL)
+    checkinput = input(Fore.MAGENTA + "----------------------------------\nCheck your password for data breaches: \n->" + Style.RESET_ALL)
+    if checkinput in ourbreach:
+        print(Fore.MAGENTA + 'We found the ' + checkinput +' in  our database, we recommend you to change it or generate new or the input was invalid\n------------------------------------------------------------------------------------------------------\n' + Style.RESET_ALL)
         time.sleep(5)
     else:
         check_pass = re.compile(r'''(
@@ -11373,14 +11373,14 @@ def xpass() :
                 (?=.*[@#$%^&+=!]).*$    
                 )''', re.VERBOSE)
 
-        mo1 = check_pass.search(checkfor)
+        mo1 = check_pass.search(checkinput)
 
         if mo1:
             status = (Fore.GREEN + "strong")
         else:
             status = (Fore.RED + "weak")
 
-        print(Fore.GREEN + checkfor + Fore.MAGENTA + " was not found in our database, the password is " + status + Fore.MAGENTA + "\n------------------------------------------------------------------------------------------------------" + Style.RESET_ALL)
+        print(Fore.GREEN + checkinput + Fore.MAGENTA + " was not found in our database, the password is " + status + Fore.MAGENTA + "\n------------------------------------------------------------------------------------------------------" + Style.RESET_ALL)
         time.sleep(5)
     input("->")
     menu()
@@ -11442,7 +11442,7 @@ def check():
         if inputpass == apppass:
             menu()
         else:
-            exit('Access denied')
+            exit('Access denied(Stopcode 1)')
 
 
 
