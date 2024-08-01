@@ -13,15 +13,13 @@ def generate_random_name(length):
     nnnnn = ''.join(random.choice(letters) for i in range(length))
     return nnnnn
 
-  
-
 
 
 def xpass() :
     # that thingy under that comment (leaked massive) soon will be recreated(without using massive) <- this shitty comment maybe lies =3 (btw im just lazy zz)
     ourbreach = [
         "123456",
-        "123456789,"
+        "123456789",
         "picture1",
         "password",
         "12345678",
@@ -11464,6 +11462,7 @@ def menu():
         menu()
 
 version = ("2.0") # im a sonic fan =)
+
 
 check()
 menu()
